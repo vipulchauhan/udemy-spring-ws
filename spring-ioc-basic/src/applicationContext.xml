@@ -21,7 +21,8 @@
 	<bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach">
 	</bean>
 
-
+	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach">
+	</bean>
 </beans>
 
 
