@@ -9,12 +9,17 @@
 
 
 	<!-- Define your beans here -->
-
+	<bean id="myLoggerConfig" class="io.vnc.ioc.MyLoggerConfig"
+		init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE" />
+		<property name="printedLoggerLevel" value="FINE" />
+	</bean>
 	<!-- define the dependency -->
 	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach">
 	</bean>
 
-
+	<bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach">
+	</bean>
 
 
 </beans>
