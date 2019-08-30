@@ -9,11 +9,18 @@
 
 
 	<!-- Define your beans here -->
+
+	<!-- Logging bean -->
 	<bean id="myLoggerConfig" class="io.vnc.ioc.MyLoggerConfig"
 		init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
 	</bean>
+
+	<!-- propertyfile -->
+	<context:property-placeholder
+		location="classpath:sports.properties" />
+
 	<!-- define the dependency -->
 	<bean id="myFortune" class="io.vnc.ioc.HappyFortuneService">
 	</bean>
@@ -30,8 +37,8 @@
 
 	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach">
 		<property name="fortuneService" ref="myFortune"></property>
-		<property name="email" value="vnchauhan.gpg@gmail.com"></property>
-		<property name="team" value="india"></property>
+		<property name="email" value="${sports.email}"></property>
+		<property name="team" value="${sports.team}"></property>
 	</bean>
 
 </beans>
