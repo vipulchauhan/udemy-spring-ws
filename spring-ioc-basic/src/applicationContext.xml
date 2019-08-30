@@ -18,6 +18,11 @@
 	<bean id="myFortune" class="io.vnc.ioc.HappyFortuneService">
 	</bean>
 
+	<bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach">
+		<constructor-arg ref="myFortune">
+		</constructor-arg>
+	</bean>
+
 	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach">
 		<constructor-arg ref="myFortune">
 		</constructor-arg>
@@ -25,11 +30,8 @@
 
 	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach">
 		<property name="fortuneService" ref="myFortune"></property>
-	</bean>
-
-	<bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach">
-		<constructor-arg ref="myFortune">
-		</constructor-arg>
+		<property name="email" value="vnchauhan.gpg@gmail.com"></property>
+		<property name="team" value="india"></property>
 	</bean>
 
 </beans>
