@@ -31,12 +31,13 @@
 	</bean>
 
 	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach"
-		scope="prototype">
+		scope="prototype" init-method="init" destroy-method="destroyed">
 		<constructor-arg ref="myFortune">
 		</constructor-arg>
 	</bean>
 
-	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach">
+	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach"
+		init-method="init" destroy-method="destroyed">
 
 		<property name="fortuneService" ref="myFortune"></property>
 		<property name="email" value="${sports.email}"></property>

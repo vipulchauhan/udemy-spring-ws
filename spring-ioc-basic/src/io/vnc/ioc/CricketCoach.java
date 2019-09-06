@@ -38,4 +38,11 @@ public class CricketCoach implements Coach {
 
 	}
 
+	public void init() {
+		System.out.println("Track coach initialization");
+	}
+
+	public void destroyed() {
+		System.out.println("Track coach destroyed");
+	}
 }
