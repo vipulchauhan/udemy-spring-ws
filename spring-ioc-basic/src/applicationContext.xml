@@ -30,12 +30,14 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach">
+	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach"
+		scope="prototype">
 		<constructor-arg ref="myFortune">
 		</constructor-arg>
 	</bean>
 
 	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach">
+
 		<property name="fortuneService" ref="myFortune"></property>
 		<property name="email" value="${sports.email}"></property>
 		<property name="team" value="${sports.team}"></property>
