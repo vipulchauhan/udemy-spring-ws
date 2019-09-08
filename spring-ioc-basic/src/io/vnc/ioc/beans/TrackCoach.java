@@ -1,7 +1,14 @@
-package io.vnc.ioc;
+package io.vnc.ioc.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import io.vnc.ioc.services.FortuneService;
+
+@Component("trackCoach")
 public class TrackCoach implements Coach {
 
+	@Autowired	
 	private FortuneService fortuneService;
 
 	private static int count = 0;

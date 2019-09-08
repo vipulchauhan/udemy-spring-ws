@@ -2,6 +2,8 @@ package io.vnc.ioc;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import io.vnc.ioc.beans.Coach;
+
 public class HelloSpringApp {
 
 	public static void main(String[] args) {

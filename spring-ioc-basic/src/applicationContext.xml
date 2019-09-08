@@ -7,11 +7,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+	<context:component-scan
+		base-package="io.vnc.ioc"></context:component-scan>
 	<!-- Define your beans here -->
 
 	<!-- Logging bean -->
-	<bean id="myLoggerConfig" class="io.vnc.ioc.MyLoggerConfig"
+
+	<bean id="myLoggerConfig" class="io.vnc.ioc.config.MyLoggerConfig"
 		init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
@@ -20,29 +22,16 @@
 	<!-- propertyfile -->
 	<context:property-placeholder
 		location="classpath:sports.properties" />
-
-	<!-- define the dependency -->
-	<bean id="myFortune" class="io.vnc.ioc.HappyFortuneService">
-	</bean>
-
-	<bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach">
-		<constructor-arg ref="myFortune">
-		</constructor-arg>
-	</bean>
-
-	<bean id="trackCoach" class="io.vnc.ioc.TrackCoach"
-		scope="prototype" init-method="init" destroy-method="destroyed">
-		<constructor-arg ref="myFortune">
-		</constructor-arg>
-	</bean>
-
-	<bean id="cricketCoach" class="io.vnc.ioc.CricketCoach"
-		init-method="init" destroy-method="destroyed">
-
-		<property name="fortuneService" ref="myFortune"></property>
-		<property name="email" value="${sports.email}"></property>
-		<property name="team" value="${sports.team}"></property>
-	</bean>
+		
+		
+	<!-- define the dependency <bean id="myFortune" class="io.vnc.ioc.HappyFortuneService"> 
+		</bean> <bean id="baseballCoach" class="io.vnc.ioc.BaseballCoach"> <constructor-arg 
+		ref="myFortune"> </constructor-arg> </bean> <bean id="trackCoach" class="io.vnc.ioc.TrackCoach" 
+		scope="prototype" init-method="init" destroy-method="destroyed"> <constructor-arg 
+		ref="myFortune"> </constructor-arg> </bean> <bean id="cricketCoach" class="io.vnc.ioc.CricketCoach" 
+		init-method="init" destroy-method="destroyed"> <property name="fortuneService" 
+		ref="myFortune"></property> <property name="email" value="${sports.email}"></property> 
+		<property name="team" value="${sports.team}"></property> </bean> -->
 
 </beans>
 

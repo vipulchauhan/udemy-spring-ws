@@ -1,8 +1,14 @@
-package io.vnc.ioc;
+package io.vnc.ioc.beans;
 
+import org.springframework.stereotype.Component;
+
+import io.vnc.ioc.services.FortuneService;
+
+@Component()
 public class BaseballCoach implements Coach {
 
 	private FortuneService fortuneService;
+
 
 	public BaseballCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;

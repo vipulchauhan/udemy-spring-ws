@@ -1,5 +1,8 @@
-package io.vnc.ioc;
+package io.vnc.ioc.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class HappyFortuneService implements FortuneService {
 
 	@Override

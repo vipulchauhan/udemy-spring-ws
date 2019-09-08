@@ -1,4 +1,4 @@
-package io.vnc.ioc;
+package io.vnc.ioc.config;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
