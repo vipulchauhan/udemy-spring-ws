@@ -1,6 +1,7 @@
 package io.vnc.ioc.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import io.vnc.ioc.services.FortuneService;
@@ -13,6 +14,7 @@ public class CricketCoach implements Coach {
 	private String team;
 
 	@Autowired
+	@Qualifier("badFortuneService")
 	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
