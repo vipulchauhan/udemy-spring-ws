@@ -2,6 +2,7 @@ package io.vnc.ioc.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import io.vnc.ioc.services.FortuneService;
@@ -10,7 +11,11 @@ import io.vnc.ioc.services.FortuneService;
 public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
+	
+	@Value("${sports.email}")
 	private String email;
+	
+	@Value("${sports.team}")
 	private String team;
 
 	@Autowired
