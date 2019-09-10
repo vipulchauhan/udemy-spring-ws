@@ -21,7 +21,7 @@
 
 	<!-- propertyfile -->
 	<context:property-placeholder
-		location="classpath:sports.properties" />
+		location="classpath:properties/sports.properties" />
 
 
 	<!-- define the dependency -->

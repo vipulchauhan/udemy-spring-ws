@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import io.vnc.ioc.services.FortuneService;
 
 @Component("cricketCoach")
-@PropertySource("classpath:sports.properties")
+@PropertySource("classpath:properties/sports.properties")
 public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;

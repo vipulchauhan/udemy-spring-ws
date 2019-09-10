@@ -19,9 +19,9 @@ public class AnnotationSpringApp {
 		System.out.println(trackCoach.getDailyWorkout());
 		System.out.println(trackCoach.getDailyFortune());
 
-		Coach baseballCoach = context.getBean("baseballCoach", Coach.class);
-		System.out.println(baseballCoach.getDailyWorkout());
-		System.out.println(baseballCoach.getDailyFortune());
+		Coach swimCoach = context.getBean("swimCoach", Coach.class);
+		System.out.println(swimCoach.getDailyWorkout());
+		System.out.println(swimCoach.getDailyFortune());
 
 		Coach cricketCoach = context.getBean("cricketCoach", Coach.class);
 		System.out.println(cricketCoach.getDailyWorkout());
