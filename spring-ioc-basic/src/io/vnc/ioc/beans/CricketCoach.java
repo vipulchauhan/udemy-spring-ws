@@ -3,18 +3,20 @@ package io.vnc.ioc.beans;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import io.vnc.ioc.services.FortuneService;
 
 @Component("cricketCoach")
+@PropertySource("classpath:sports.properties")
 public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
-	
+
 	@Value("${sports.email}")
 	private String email;
-	
+
 	@Value("${sports.team}")
 	private String team;
 
