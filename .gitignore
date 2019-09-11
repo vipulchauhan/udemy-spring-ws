@@ -1,3 +1,8 @@
 .metadata/
 spring-ioc-basic/bin/
 Material/
+/Servers/
+spring-mvc/.settings/
+spring-mvc/build/
+spring-mvc/.classpath
+spring-mvc/.project
