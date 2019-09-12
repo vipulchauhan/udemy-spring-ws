@@ -7,13 +7,9 @@
 </head>
 <body>
 	<div class="container">
-		<h2  class="text-center">User Registration Form</h2>
-		<hr/ >
-		<form action="signup" method="get">
-			<div class="form-group">
-				<label for="fullname">Full Name:</label>
-				<input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter your full name" required />
-			</div>
+		<h2 class="text-center">User Login Form</h2>
+		<hr / >
+		<form action="signin" method="get">
 			<div class="form-group">
 				<label for="email">Email:</label>
 				<input type="email" class="form-control" name="email" id="email" placeholder="Enter your email id" required />
@@ -22,7 +18,7 @@
 				<label for="pwd">Password:</label>
 				<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter your password" required />
 			</div>
-			<button type="submit" class="btn btn-primary">Sign Up</button>
+			<button type="submit" class="btn btn-primary">login</button>
 		</form>
 	</div>
 </body>

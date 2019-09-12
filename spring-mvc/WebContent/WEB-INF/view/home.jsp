@@ -2,20 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home Page</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Home Page</title>
+	<jsp:include page="header.jsp" />
 </head>
 <body>
 	<div class="container">
-		<h1>My Home Page</h1>
-		<p>
-			<a href="register">User Registration Page</a>
-		</p>
+		<h1 class="text-center">My Home Page</h1>
+		<hr/ >
+		<ul>
+			<li><a href="register">User Registration Page</a></li>
+			<li><a href="login">User Login Page</a></li>
+		</ul>
 	</div>
 </body>
 </html>
