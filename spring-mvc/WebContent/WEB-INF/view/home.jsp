@@ -10,8 +10,8 @@
 		<h1 class="text-center">My Home Page</h1>
 		<hr/ >
 		<ul>
-			<li><a href="register">User Registration Page</a></li>
-			<li><a href="login">User Login Page</a></li>
+			<li><a href="auth/register">User Registration Page</a></li>
+			<li><a href="auth/login">User Login Page</a></li>
 		</ul>
 	</div>
 </body>

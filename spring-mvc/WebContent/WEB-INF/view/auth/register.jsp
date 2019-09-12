@@ -3,12 +3,12 @@
 <html>
 <head>
 <title>Register</title>
-<jsp:include page="header.jsp" />
+<jsp:include page="./../header.jsp" />
 </head>
 <body>
 	<div class="container">
 		<h2  class="text-center">User Registration Form</h2>
-		<hr/ >
+		<hr/>
 		<form action="signup" method="get">
 			<div class="form-group">
 				<label for="fullname">Full Name:</label>
@@ -20,7 +20,7 @@
 			</div>
 			<div class="form-group">
 				<label for="pwd">Password:</label>
-				<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter your password" required />
+				<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required />
 			</div>
 			<button type="submit" class="btn btn-primary">Sign Up</button>
 		</form>
