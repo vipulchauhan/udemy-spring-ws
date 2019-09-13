@@ -1,12 +1,25 @@
 package io.vnc.mvc.dto;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 public class User {
 	private String username;
+	private String email;
+	private String password;
 	private String firstname;
 	private String lastname;
 	private Long mobile;
-	private String email;
-	private String password;
+	private String role;
+	private String gender;
+
+	private final HashMap<String, String> userRoles = new LinkedHashMap<>();
+
+	public User() {
+		userRoles.put("student", "Student");
+		userRoles.put("teacher", "Teacher");
+		userRoles.put("admin", "Admin");
+	}
 
 	public String getUsername() {
 		return username;
@@ -56,35 +69,31 @@ public class User {
 		this.password = password;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		return result;
+	public String getRole() {
+		return role;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	
+	public HashMap<String, String> getUserRoles() {
+		return userRoles;
 	}
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", firstname=" + firstname + ", lastname=" + lastname + ", mobile="
-				+ mobile + ", email=" + email + ", password=" + password + "]";
+		return "User [username=" + username + ", email=" + email + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", mobile=" + mobile + ", role=" + role + ", gender=" + gender + "]";
 	}
 
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center">
-		<h1>Welcome to User Dashboard</h1>
+		<h1>Welcome to ${newUser.role} Dashboard</h1>
 	</div>
 
 	<div class="container">
