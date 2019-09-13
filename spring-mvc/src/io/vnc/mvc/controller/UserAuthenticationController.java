@@ -1,5 +1,9 @@
 package io.vnc.mvc.controller;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,11 +15,14 @@ import io.vnc.mvc.dto.User;
 @Controller
 @RequestMapping("/auth")
 public class UserAuthenticationController {
+	@Value("#{rolesOptions}")
+	private HashMap<String, String> userRoles = new LinkedHashMap<>();
 
 	// redirection
 	@RequestMapping("/register")
 	public String register(Model userModel) {
 		userModel.addAttribute("newUser", new User());
+		userModel.addAttribute("rolesOptions", userRoles);
 		return "auth/register";
 	}
 

@@ -51,7 +51,7 @@
 			<div class="form-group">
 				<label for="role">Role:</label>
 				<form:select path="role" class="form-control" id="role" name="role">
-					<form:options items="${newUser.userRoles}"></form:options>
+					<form:options items="${rolesOptions}"></form:options>
 					<%-- 	<form:option value="student" label="Student"></form:option>
 					<form:option value="teacher" label="Teacher"></form:option>
 					<form:option value="admin" label="Admin"></form:option> --%>

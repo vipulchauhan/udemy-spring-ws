@@ -3,6 +3,8 @@ package io.vnc.mvc.dto;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class User {
 	private String username;
 	private String email;
@@ -12,14 +14,6 @@ public class User {
 	private Long mobile;
 	private String role;
 	private String gender;
-
-	private final HashMap<String, String> userRoles = new LinkedHashMap<>();
-
-	public User() {
-		userRoles.put("student", "Student");
-		userRoles.put("teacher", "Teacher");
-		userRoles.put("admin", "Admin");
-	}
 
 	public String getUsername() {
 		return username;
@@ -83,11 +77,6 @@ public class User {
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	
-	public HashMap<String, String> getUserRoles() {
-		return userRoles;
 	}
 
 	@Override
