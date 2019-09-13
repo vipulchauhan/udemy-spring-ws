@@ -1,27 +1,43 @@
 package io.vnc.mvc.dto;
 
 public class User {
-	private String fullname;
+	private String username;
+	private String firstname;
+	private String lastname;
+	private Long mobile;
 	private String email;
 	private String password;
 
-	public User(String fullname, String email, String password) {
-		super();
-		this.fullname = fullname;
-		this.email = email;
-		this.password = password;
+	public String getUsername() {
+		return username;
 	}
 
-	public User() {
-		super();
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public Long getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getEmail() {
@@ -44,7 +60,7 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((fullname == null) ? 0 : fullname.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -57,17 +73,18 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (fullname == null) {
-			if (other.fullname != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!fullname.equals(other.fullname))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [fullname=" + fullname + ", email=" + email + ", password=" + password + "]";
+		return "User [username=" + username + ", firstname=" + firstname + ", lastname=" + lastname + ", mobile="
+				+ mobile + ", email=" + email + ", password=" + password + "]";
 	}
 
 }

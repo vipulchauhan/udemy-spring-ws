@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
-				<p>Welcome ${userDetail.fullname}</p>
+				<p>Welcome ${newUser.firstname} ${newUser.lastname}</p>
 			</div>
 			<div class="col-sm-2"></div>
 		</div>
