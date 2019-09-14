@@ -27,7 +27,7 @@ public class User {
 	private String lastname;
 
 	@NotNull(message = "Enter mobile no")
-	@Min(value = 1000000000L)
+	@Min(value = 4000000000L)
 	@Max(value = 9999999999L)
 	private Long mobile;
 
