@@ -14,7 +14,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import io.vnc.mvc.dto.User;
 
@@ -47,29 +46,26 @@ public class UserAuthenticationController {
 	// redirection
 	@RequestMapping("/register")
 	public String register(Model userModel) {
-		extracted(userModel, new User());
-		System.out.println("populating ref data");
-		return "auth/register";
-	}
-
-	private void extracted(Model userModel, User user) {
-		userModel.addAttribute("newUser", user);
+		userModel.addAttribute("newUser", new User());
 		userModel.addAttribute("rolesOptions", userRoles);
 		userModel.addAttribute("genders", genders);
 		userModel.addAttribute("notificationPrefs", notificationPrefs);
+		System.out.println("populating ref data");
+		return "auth/register";
 	}
 
 	@RequestMapping("/profile")
 	public String profile(Model userModel, @ModelAttribute("newUser") User newUser) {
 		System.out.println("Fetching profile for user :---");
 		System.out.println(newUser);
-		extracted(userModel, newUser);
+		userModel.addAttribute("loggedUser", newUser);
 		return "auth/profile";
 	}
 
 	// redirection
 	@RequestMapping("/login")
-	public String login() {
+	public String login(Model userModel) {
+		userModel.addAttribute("loggedUser", new User());
 		return "auth/login";
 	}
 
@@ -78,21 +74,26 @@ public class UserAuthenticationController {
 	public String signup(Model userModel, @Valid @ModelAttribute("newUser") User newUser, BindingResult bindingResult) {
 		System.out.println("New User details :---");
 		System.out.println(newUser);
-		extracted(userModel, newUser);
+
 		if (bindingResult.hasErrors()) {
+			userModel.addAttribute("newUser", newUser);
+			userModel.addAttribute("rolesOptions", userRoles);
+			userModel.addAttribute("genders", genders);
+			userModel.addAttribute("notificationPrefs", notificationPrefs);
 			System.out.println("Validation Errors found:---");
 			System.out.println(bindingResult.getAllErrors());
 			return "auth/register";
-		} else
+		} else {
+			userModel.addAttribute("loggedUser", newUser);
 			return "dashboard";
+		}
 	}
 
 	// servlet
 	@RequestMapping("/signin")
-	public String signin(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
+	public String signin(Model userModel, @ModelAttribute("loggedUser") User loggedUser) {
 
-		User user = new User();
-		model.addAttribute("userDetail", user);
+		userModel.addAttribute("loggedUser", loggedUser);
 
 		return "dashboard";
 	}

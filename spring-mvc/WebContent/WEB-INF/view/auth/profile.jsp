@@ -61,7 +61,7 @@
 
 				</div>
 				<div class="col-sm-2">
-					<a href="/dashboard">Dashboard</a>
+					<a href="signin">Dashboard</a>
 				</div>
 			</div>
 		</div>
