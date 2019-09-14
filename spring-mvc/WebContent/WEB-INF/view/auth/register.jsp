@@ -18,36 +18,42 @@
 					<label for="username">User Name:</label>
 					<form:input path="username" type="text" class="form-control" name="username" id="username" placeholder="Enter user name"
 						required="required" minlength="6" maxlength="15" />
+					<form:errors class="alert alert-danger" path="username"></form:errors>
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email:</label>
 					<form:input path="email" type="email" class="form-control" name="email" id="email" placeholder="Enter your email id"
 						required="required" />
+					<form:errors class="alert alert-danger" path="email"></form:errors>
 				</div>
 
 				<div class="form-group">
 					<label for="pwd">Password:</label>
 					<form:input path="password" type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
 						required="required" minlength="6" maxlength="15" />
+					<form:errors class="alert alert-danger" path="password"></form:errors>
 				</div>
 
 				<div class="form-group">
 					<label for="firstname">First Name:</label>
 					<form:input path="firstname" type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter your first name"
 						required="required" />
+					<form:errors class="alert alert-danger" path="firstname"></form:errors>
 				</div>
 
 				<div class="form-group">
 					<label for="lastname">Last Name:</label>
 					<form:input path="lastname" type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter your last name"
 						required="required" />
+					<form:errors class="alert alert-danger" path="username"></form:errors>
 				</div>
 
 				<div class="form-group">
 					<label for="mobile">Mobile:</label>
 					<form:input path="mobile" type="number" class="form-control" name="mobile" id="mobile" placeholder="Enter your mobile no"
 						required="required" min="1000000000" max="9999999999" />
+					<form:errors class="alert alert-danger" path="mobile"></form:errors>
 				</div>
 
 				<div class="form-group">
@@ -58,6 +64,7 @@
 					<form:option value="teacher" label="Teacher"></form:option>
 					<form:option value="admin" label="Admin"></form:option> --%>
 					</form:select>
+					<form:errors class="alert alert-danger" path="role"></form:errors>
 				</div>
 
 				<div class="form-group">
@@ -66,6 +73,7 @@
 					<%-- <form:radiobutton path="gender" value="male" />  Male						
 					<form:radiobutton path="gender" value="female" /> Female						 
 					<form:radiobutton path="gender" value="other" /> Other --%>
+					<form:errors class="alert alert-danger" path="gender"></form:errors>
 				</div>
 
 				<div class="form-group">
@@ -74,6 +82,7 @@
 					<%-- <form:radiobutton path="gender" value="male" />  Male						
 					<form:radiobutton path="gender" value="female" /> Female						 
 					<form:radiobutton path="gender" value="other" /> Other --%>
+					<form:errors class="alert alert-danger" path="notificationPref"></form:errors>
 				</div>
 				<button type="submit" class="btn btn-primary">Sign Up</button>
 			</fieldset>

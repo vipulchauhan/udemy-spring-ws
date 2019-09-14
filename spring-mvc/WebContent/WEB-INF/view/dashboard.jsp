@@ -19,10 +19,7 @@
 				<p>Welcome ${newUser.firstname} ${newUser.lastname}</p>
 			</div>
 			<div class="col-sm-2">
-				<form:form action="profile" modelAttribute="newUser">
-					<input type="submit" value="User Profile Page">
-				</form:form>
-
+				<a href="profile">User Profile</a>
 			</div>
 		</div>
 	</div>

@@ -1,18 +1,41 @@
 package io.vnc.mvc.dto;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class User {
+
+	@NotNull(message = "Enter user name")
+	@Size(min = 6, max = 15)
 	private String username;
+
+	@NotNull(message = "Enter Email Address")
 	private String email;
+
+	@NotNull(message = "Enter Password")
+	@Size(min = 6, max = 15)
 	private String password;
+
+	@NotNull(message = "Enter first name")
 	private String firstname;
+
+	@NotNull(message = "Enter last name")
 	private String lastname;
+
+	@NotNull(message = "Enter mobile no")
+	@Min(value = 1000000000L)
+	@Max(value = 9999999999L)
 	private Long mobile;
+
+	@NotNull(message = "Enter Role")
 	private String role;
+
 	private String gender;
+
 	private List<String> notificationPref;
 
 	public String getUsername() {

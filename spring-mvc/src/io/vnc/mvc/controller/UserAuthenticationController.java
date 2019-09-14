@@ -3,9 +3,12 @@ package io.vnc.mvc.controller;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,17 +38,23 @@ public class UserAuthenticationController {
 	// redirection
 	@RequestMapping("/register")
 	public String register(Model userModel) {
-		userModel.addAttribute("newUser", new User());
-		userModel.addAttribute("rolesOptions", userRoles);
-		userModel.addAttribute("genders", genders);
-		userModel.addAttribute("notificationPrefs", notificationPrefs);
+		extracted(userModel, new User());
+		System.out.println("populating ref data");
 		return "auth/register";
 	}
 
+	private void extracted(Model userModel, User user) {
+		userModel.addAttribute("newUser", user);
+		userModel.addAttribute("rolesOptions", userRoles);
+		userModel.addAttribute("genders", genders);
+		userModel.addAttribute("notificationPrefs", notificationPrefs);
+	}
+
 	@RequestMapping("/profile")
-	public String profile(@ModelAttribute("newUser") User newUser) {
+	public String profile(Model userModel, @ModelAttribute("newUser") User newUser) {
 		System.out.println("Fetching profile for user :---");
 		System.out.println(newUser);
+		extracted(userModel, newUser);
 		return "auth/profile";
 	}
 
@@ -57,10 +66,16 @@ public class UserAuthenticationController {
 
 	// servlet
 	@RequestMapping("/signup")
-	public String signup(@ModelAttribute("newUser") User newUser) {
+	public String signup(Model userModel, @Valid @ModelAttribute("newUser") User newUser, BindingResult bindingResult) {
 		System.out.println("New User details :---");
 		System.out.println(newUser);
-		return "dashboard";
+		extracted(userModel, newUser);
+		if (bindingResult.hasErrors()) {
+			System.out.println("Validation Errors found:---");
+			System.out.println(bindingResult.getAllErrors());
+			return "auth/register";
+		} else
+			return "dashboard";
 	}
 
 	// servlet
