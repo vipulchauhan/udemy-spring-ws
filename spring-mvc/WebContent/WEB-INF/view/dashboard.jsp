@@ -18,7 +18,12 @@
 			<div class="col-sm-8">
 				<p>Welcome ${newUser.firstname} ${newUser.lastname}</p>
 			</div>
-			<div class="col-sm-2"></div>
+			<div class="col-sm-2">
+				<form:form action="profile" modelAttribute="newUser">
+					<input type="submit" value="User Profile Page">
+				</form:form>
+
+			</div>
 		</div>
 	</div>
 </body>

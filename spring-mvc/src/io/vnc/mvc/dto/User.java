@@ -1,9 +1,8 @@
 package io.vnc.mvc.dto;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
-import org.springframework.beans.factory.annotation.Value;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class User {
 	private String username;
@@ -14,6 +13,7 @@ public class User {
 	private Long mobile;
 	private String role;
 	private String gender;
+	private List<String> notificationPref;
 
 	public String getUsername() {
 		return username;
@@ -79,10 +79,19 @@ public class User {
 		this.gender = gender;
 	}
 
+	public List<String> getNotificationPref() {
+		return notificationPref;
+	}
+
+	public void setNotificationPref(List<String> notificationPref) {
+		this.notificationPref = notificationPref;
+	}
+
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", email=" + email + ", password=" + password + ", firstname=" + firstname
-				+ ", lastname=" + lastname + ", mobile=" + mobile + ", role=" + role + ", gender=" + gender + "]";
+				+ ", lastname=" + lastname + ", mobile=" + mobile + ", role=" + role + ", gender=" + gender
+				+ ", notificationPref=" + notificationPref + "]";
 	}
 
 }
