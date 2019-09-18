@@ -9,8 +9,8 @@ import javax.validation.constraints.Size;
 
 public class User {
 
-	@NotNull(message = "Enter user name")
-	@Size(min = 6, max = 15)
+	@NotNull()
+	@Size(min = 8, max = 15)
 	private String username;
 
 	@NotNull(message = "Enter Email Address")
@@ -27,8 +27,8 @@ public class User {
 	private String lastname;
 
 	@NotNull(message = "Enter mobile no")
-	@Min(value = 4000000000L)
-	@Max(value = 9999999999L)
+	@Min(value = 4000000000L, message = "mobile no must be of 10 digits")
+	@Max(value = 9999999999L, message = "mobile no must be of 10 digits")
 	private Long mobile;
 
 	@NotNull(message = "Enter Role")

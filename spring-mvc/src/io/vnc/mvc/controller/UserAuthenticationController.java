@@ -55,10 +55,10 @@ public class UserAuthenticationController {
 	}
 
 	@RequestMapping("/profile")
-	public String profile(Model userModel, @ModelAttribute("newUser") User newUser) {
+	public String profile(Model userModel, @ModelAttribute("loggedUser") User loggedUser) {
 		System.out.println("Fetching profile for user :---");
-		System.out.println(newUser);
-		userModel.addAttribute("loggedUser", newUser);
+		System.out.println(loggedUser);
+		userModel.addAttribute("loggedUser", loggedUser);
 		return "auth/profile";
 	}
 
@@ -81,7 +81,7 @@ public class UserAuthenticationController {
 			userModel.addAttribute("genders", genders);
 			userModel.addAttribute("notificationPrefs", notificationPrefs);
 			System.out.println("Validation Errors found:---");
-			System.out.println(bindingResult.getAllErrors());
+			System.out.println(bindingResult);
 			return "auth/register";
 		} else {
 			userModel.addAttribute("loggedUser", newUser);
