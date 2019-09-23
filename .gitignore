@@ -6,3 +6,6 @@ spring-mvc/.settings/
 spring-mvc/build/
 spring-mvc/.classpath
 spring-mvc/.project
+.settings/**
+.classpath
+.project
