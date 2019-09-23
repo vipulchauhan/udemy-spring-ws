@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.vnc.mvc.dto.Course;
 import io.vnc.mvc.dto.User;
 
 @Controller
@@ -85,6 +86,7 @@ public class UserAuthenticationController {
 			return "auth/register";
 		} else {
 			userModel.addAttribute("loggedUser", newUser);
+			userModel.addAttribute("course", new Course());
 			return "dashboard";
 		}
 	}
@@ -94,6 +96,7 @@ public class UserAuthenticationController {
 	public String signin(Model userModel, @ModelAttribute("loggedUser") User loggedUser) {
 
 		userModel.addAttribute("loggedUser", loggedUser);
+		userModel.addAttribute("course", new Course());
 
 		return "dashboard";
 	}
