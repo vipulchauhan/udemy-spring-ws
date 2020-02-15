@@ -1,4 +1,4 @@
-package io.vnc.ioc;
+package io.vnc.ioc.beans;
 
 public interface Coach {
 

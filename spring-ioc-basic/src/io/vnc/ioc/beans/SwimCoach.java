@@ -1,16 +1,18 @@
-package io.vnc.ioc;
+package io.vnc.ioc.beans;
 
-public class BaseballCoach implements Coach {
+import io.vnc.ioc.services.FortuneService;
+
+public class SwimCoach implements Coach {
 
 	private FortuneService fortuneService;
 
-	public BaseballCoach(FortuneService fortuneService) {
+	public SwimCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		return "Spend 30 minutes on batting practice";
+		return "Spend 30 minutes on swimming practice";
 	}
 
 	@Override
